@@ -8,7 +8,7 @@ export default function Header() {
 					src={logoSvg}
 					alt='logo'
 				/>
-				<span>React Playground</span>
+				<span> Playground</span>
 			</div>
 		</div>
 	);

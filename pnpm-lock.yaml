@@ -11,12 +11,18 @@ importers:
       '@ant-design/icons':
         specifier: ^5.4.0
         version: 5.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@babel/core':
+        specifier: ^7.25.2
+        version: 7.25.2
       '@babel/standalone':
-        specifier: ^7.24.10
+        specifier: ^7.25.6
         version: 7.25.6
       '@monaco-editor/react':
         specifier: ^4.6.0
         version: 4.6.0(monaco-editor@0.51.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@types/babel-core':
+        specifier: ^6.25.10
+        version: 6.25.10
       '@typescript/ata':
         specifier: ^0.9.6
         version: 0.9.7(typescript@5.5.4)
@@ -597,6 +603,21 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@types/babel-core@6.25.10':
+    resolution: {integrity: sha512-VyqZTf+n8wj+8Powi4k2PwQiHT6ESJb6BEX5IETfmPzdZ9G2sOtFIopdpC2TI3T4Tmf1Shys2QeRv4ZBi4U2EA==}
+
+  '@types/babel-generator@6.25.8':
+    resolution: {integrity: sha512-f5l89J0UpYhTE6TFCxy3X+8pJVru1eig1fcvF9qHmOk9h1VxZimd+++tu5GShntCOdhE/MoZZ0SlpGTyh4XrKg==}
+
+  '@types/babel-template@6.25.5':
+    resolution: {integrity: sha512-1f+n65xfg9ukqz+BaHYrCWe3Fymv4Ho0i9fU/MHri8MQKU+S4n+vexR5hXs+94d/fsaMLMP45q0hX6FRspKLiQ==}
+
+  '@types/babel-traverse@6.25.10':
+    resolution: {integrity: sha512-B3XitTFG8YeXb5lr7Nj62t1DikCDuAJ/4BDeK6GCuWREEmdunI9DWnv+81oHl2yQBQPWY/C1PmV3vaRZB4LQmw==}
+
+  '@types/babel-types@7.0.15':
+    resolution: {integrity: sha512-JUgfZHUOMbtjopxiOQaaF+Uovk5wpDqpXR+XLWiOivCWSy1FccO30lvNNpCt8geFwq8VmGT2y9OMkOpA0g5O5g==}
+
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
 
@@ -611,6 +632,9 @@ packages:
 
   '@types/babel__traverse@7.20.6':
     resolution: {integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==}
+
+  '@types/babylon@6.16.9':
+    resolution: {integrity: sha512-sEKyxMVEowhcr8WLfN0jJYe4gS4Z9KC2DGz0vqfC7+MXFbmvOF7jSjALC77thvAO2TLgFUPa9vDeOak+AcUrZA==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -2140,6 +2164,29 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.2':
     optional: true
 
+  '@types/babel-core@6.25.10':
+    dependencies:
+      '@types/babel-generator': 6.25.8
+      '@types/babel-template': 6.25.5
+      '@types/babel-traverse': 6.25.10
+      '@types/babel-types': 7.0.15
+      '@types/babylon': 6.16.9
+
+  '@types/babel-generator@6.25.8':
+    dependencies:
+      '@types/babel-types': 7.0.15
+
+  '@types/babel-template@6.25.5':
+    dependencies:
+      '@types/babel-types': 7.0.15
+      '@types/babylon': 6.16.9
+
+  '@types/babel-traverse@6.25.10':
+    dependencies:
+      '@types/babel-types': 7.0.15
+
+  '@types/babel-types@7.0.15': {}
+
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.25.6
@@ -2164,6 +2211,10 @@ snapshots:
   '@types/babel__traverse@7.20.6':
     dependencies:
       '@babel/types': 7.25.6
+
+  '@types/babylon@6.16.9':
+    dependencies:
+      '@types/babel-types': 7.0.15
 
   '@types/estree@1.0.5': {}
 
