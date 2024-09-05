@@ -5,8 +5,7 @@ import { PlaygroundContext } from '../../PlaygroundContext';
 import { debounce } from 'lodash-es';
 
 export default function CodeEditor() {
-	const { theme, files, setFiles, selectedFileName, setSelectedFileName } =
-		useContext(PlaygroundContext);
+	const { theme, files, setFiles, selectedFileName } = useContext(PlaygroundContext);
 
 	const file = files[selectedFileName];
 

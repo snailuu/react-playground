@@ -1,4 +1,4 @@
-import { MouseEventHandler, useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 import { Popconfirm } from 'antd';
