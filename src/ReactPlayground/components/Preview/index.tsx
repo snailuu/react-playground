@@ -25,9 +25,10 @@ export default function Preview() {
 		if (!compilerWorkerRef.current) {
 			compilerWorkerRef.current = new CompilerWorker();
 			compilerWorkerRef.current.addEventListener('message', ({ data }) => {
-				// console.log('worker', data);
+				console.log('worker', data);
 				if (data.type === 'COMPILED_CODE') {
 					setCompiledCode(data.data);
+					// setError('');
 				} else {
 					// console.log('error', data);
 				}
@@ -57,12 +58,14 @@ export default function Preview() {
 
 	useEffect(() => {
 		setIframeUrl(getIframeUrl());
+		console.log('getIframeUrl', getIframeUrl());
 	}, [files[IMPORT_MAP_FILE_NAME].value, compiledCode]);
 
 	const [iframeUrl, setIframeUrl] = useState(getIframeUrl());
 
 	const handleMessage = (msg: MessageData) => {
 		const { type, message } = msg.data;
+		console.log('handleMessage', type, message);
 		if (type === 'ERROR') {
 			setError(message);
 		}
@@ -86,10 +89,14 @@ export default function Preview() {
 					border: 'none',
 				}}
 			/>
-			<Message
-				type='error'
-				content={error}
-			/>
+			{error.length ? (
+				<Message
+					type='error'
+					content={error}
+				/>
+			) : (
+				''
+			)}
 
 			{/* <Editor file={{
             name: 'dist.js',

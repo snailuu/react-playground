@@ -104,6 +104,7 @@ export const compile = (files: Files) => {
 
 self.addEventListener('message', async ({ data }) => {
 	try {
+		console.log('编译中：', data);
 		self.postMessage({
 			type: 'COMPILED_CODE',
 			data: compile(data),

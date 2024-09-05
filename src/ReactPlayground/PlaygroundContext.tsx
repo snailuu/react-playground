@@ -33,19 +33,19 @@ export const PlaygroundContext = createContext<PlaygroundContext>({
 const getFilesFromUrl = () => {
 	let files: Files | undefined;
 	try {
-		const hash = uncompress(window.location.hash.slice(1))
-		files = JSON.parse(hash)
+		const hash = uncompress(window.location.hash.slice(1));
+		files = JSON.parse(hash);
 	} catch (error) {
-		console.error(error)
+		console.error(error);
 	}
-	return files
-}
+	return files;
+};
 
 export const PlaygroundProvider = (props: PropsWithChildren) => {
 	const { children } = props;
-	const [files, setFiles] = useState<Files>(getFilesFromUrl()||initFiles);
+	const [files, setFiles] = useState<Files>(getFilesFromUrl() || initFiles);
 	const [selectedFileName, setSelectedFileName] = useState<string>('App.tsx');
-	const [theme, setTheme] = useState<Theme>('dark');
+	const [theme, setTheme] = useState<Theme>('light');
 
 	const addFile = (name: string) => {
 		files[name] = {
@@ -79,9 +79,9 @@ export const PlaygroundProvider = (props: PropsWithChildren) => {
 	};
 
 	useEffect(() => {
-		const hash = compress(JSON.stringify(files))
+		const hash = compress(JSON.stringify(files));
 		window.location.hash = hash;
-	},[files])
+	}, [files]);
 
 	return (
 		<PlaygroundContext.Provider
