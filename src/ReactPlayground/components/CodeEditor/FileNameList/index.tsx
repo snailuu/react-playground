@@ -41,7 +41,7 @@ export default function FileNameList() {
 	useEffect(() => {
 		const container = document.querySelector(`.${styles.tabs}`) as HTMLElement;
 		const handleWheel = (e: WheelEvent) => {
-			console.log(e);
+			// console.log(e);
 			e.preventDefault();
 			container.scrollLeft += e.deltaY;
 		};
@@ -65,7 +65,7 @@ export default function FileNameList() {
 					creating={creating && index === arr.length - 1}
 					actived={selectedFileName === item}
 					onClick={() => {
-						console.log('点击了', item);
+						// console.log('点击了', item);
 						setSelectedFileName(item);
 					}}
 					onEditComplete={(name: string) => handleEditComplete(name, item)}
