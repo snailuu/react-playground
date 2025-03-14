@@ -154,7 +154,7 @@ export default function Preview() {
 				`
 
         try {
-          newTab.eval(setupCode)
+          (newTab as any).eval(setupCode)
         }
         catch (e) {
           console.error('无法在新标签页中注入更新代码', e)
@@ -181,14 +181,14 @@ export default function Preview() {
       />
       {error.length
         ? (
-            <Message
-              type="error"
-              content={error}
-            />
-          )
+          <Message
+            type="error"
+            content={error}
+          />
+        )
         : (
-            ''
-          )}
+          ''
+        )}
 
       {/* <Editor file={{
             name: 'dist.js',
