@@ -1,12 +1,14 @@
-import ReactPlayground from './ReactPlayground';
-import './App.scss';
-import { PlaygroundProvider } from './ReactPlayground/PlaygroundContext';
+import ReactPlayground from './ReactPlayground'
+import { PlaygroundProvider } from './ReactPlayground/PlaygroundContext'
+import './App.scss'
+
 function App() {
-	return (
-		<PlaygroundProvider>
-			<ReactPlayground />;
-		</PlaygroundProvider>
-	);
+  return (
+    <PlaygroundProvider>
+      <ReactPlayground />
+      ;
+    </PlaygroundProvider>
+  )
 }
 
-export default App;
+export default App
