@@ -1,34 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <script>
-        const code1 = `
+      const code1 = `
     function add(a, b) {
         return a + b;
     }
     export { add };
-    `;
+    `
 
-        const url = URL.createObjectURL(new Blob([code1], {
-            type: 'application/javascript'
-        }));
-        const code2 = `import { add } from "${url}";
+      const url = URL.createObjectURL(
+        new Blob([code1], {
+          type: 'application/javascript',
+        }),
+      )
+      const code2 = `import { add } from "${url}";
 
-    console.log(add(2, 3));`;
+    console.log(add(2, 3));`
 
-        const script = document.createElement('script');
-        script.type = "module";
-        script.textContent = code2;
-        document.body.appendChild(script);
+      const script = document.createElement('script')
+      script.type = 'module'
+      script.textContent = code2
+      document.body.appendChild(script)
     </script>
-</body>
-
+  </body>
 </html>
